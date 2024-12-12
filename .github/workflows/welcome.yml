@@ -1,0 +1,14 @@
+name: Post welcome comment
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Add a welcome comment
+      run: echo "Welcome to the project! 🎉"
